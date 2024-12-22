@@ -1,2 +1,2 @@
 # test_project
-for learnin Python
+for learning Python
