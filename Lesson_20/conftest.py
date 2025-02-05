@@ -18,7 +18,7 @@ def new_post_id():
     requests.delete(f'https://jsonplaceholder.typicode.com/posts/{post_id}')
 
 
-
+#
 @pytest.fixture()
 def num():
     return 1
