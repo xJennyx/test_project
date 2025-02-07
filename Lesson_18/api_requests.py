@@ -29,13 +29,13 @@ def post_a_post():
     )
     assert response.status_code == 201, 'Status code is incorrect'
     assert response.json()['id'] == 101, 'Id is incorrect'
-
+#
 
 def new_post():
     body = {
         "title": "VItya",
         "body": "Vitek",
-        "userId": "1511"
+        "userId": "1511",
     }
     headers = {"Content-Type" : "application/json"}
     response = requests.post(
