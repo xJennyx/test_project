@@ -31,6 +31,8 @@ def test_class_name(driver):
     text_string.send_keys(input_data)
     text_string.send_keys(Keys.ENTER)
     result_text = driver.find_element(By.CLASS_NAME, 'result-text')
+    print(result_text.text)
+    print(result_text.get_attribute('innerText'))
     assert result_text.text == input_data
 
 
@@ -49,5 +51,14 @@ def test_css_selector(driver):
     driver.get('https://www.qa-practice.com/elements/input/simple')
     #text_string = driver.find_element(By.CSS_SELECTOR, '[placeholder="Submit me"]')
     text_string = driver.find_element(By.CSS_SELECTOR, '.textinput')
+    text_string.send_keys('input_data')
+    #text_string.send_keys(Keys.ENTER)
+    print(text_string.value_of_css_property('border-color'))
+    assert text_string.get_attribute('placeholder') == 'Submit me'
+
+
+def test_xpath(driver):
+    driver.get('https://www.qa-practice.com/elements/input/simple')
+    text_string = driver.find_element(By.XPATH, '//*[@placeholder="Submit me"]')
     text_string.send_keys('input_data')
     text_string.send_keys(Keys.ENTER)
